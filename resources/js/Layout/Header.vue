@@ -1,11 +1,60 @@
+<script setup>
+import { Link } from "@inertiajs/vue3";
+import { ref } from "vue";
+const showTitle = ref(false);
+
+const toggle = () => {
+    showTitle.value = !showTitle.value;
+};
+</script>
+
 <template>
-    <header>
-        <!-- Your header content here -->
-        <nav>
-            <!-- Navigation items -->
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+    <main class="flex flex-col place-items-center bg-secondary sticky top-0">
+        <header
+            class="w-saktoLang flex justify-between place-items-center h-20"
+        >
+            <div class="flex gap-4">
+                <div @click="toggle" class="cursor-pointer">
+                    <img src="images/favic.png" class="h-12 hover:opacity-90" />
+                </div>
+                <transition
+                    enter-active-class="transition-opacity duration-300"
+                    enter-from-class="opacity-0"
+                    enter-to-class="opacity-100"
+                    leave-active-class="transition-opacity duration-300"
+                    leave-from-class="opacity-100"
+                    leave-to-class="opacity-0"
+                >
+                    <span
+                        class="font-extrabold font-sans text-4xl text-primary"
+                        v-show="showTitle"
+                        >GAR TECHNOLOGY</span
+                    >
+                </transition>
+            </div>
+            <ul class="flex gap-6 place-items-center">
+                <Link href="/"
+                    ><li
+                        class="font-semibold text-[16px] font-mona text-primary hover:opacity-80"
+                    >
+                        Home
+                    </li>
+                </Link>
+                <Link href="/About"
+                    ><li
+                        class="font-semibold text-[16px] font-mona text-primary hover:opacity-80"
+                    >
+                        About
+                    </li></Link
+                >
+                <Link href="/Contact"
+                    ><li
+                        class="font-semibold text-[16px] font-mona text-center ml-4 px-8 py-4 bg-primary text-white rounded-3xl hover:opacity-90"
+                    >
+                        Contact Us
+                    </li></Link
+                >
+            </ul>
+        </header>
+    </main>
 </template>
