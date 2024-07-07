@@ -1,7 +1,20 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
-import { ref } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 const showTitle = ref(false);
+const isScrolling = ref(false);
+
+const updateScroll = () => {
+    isScrolling.value = window.scrollY > 0;
+};
+
+onMounted(() => {
+    window.addEventListener("scroll", updateScroll);
+
+    onUnmounted(() => {
+        window.removeEventListener("scroll", updateScroll);
+    });
+});
 
 const toggle = () => {
     showTitle.value = !showTitle.value;
@@ -9,11 +22,21 @@ const toggle = () => {
 </script>
 
 <template>
-    <main class="flex flex-col place-items-center bg-secondary sticky top-0">
-        <header
-            class="w-saktoLang flex justify-between place-items-center h-20"
-        >
-            <div class="flex gap-4">
+    <main
+        class="flex-col place-items-center sticky top-0 transition-all duration-500 ease-in-out sm:flex hidden"
+        :class="{
+            'bg-accent  rounded-b-md': isScrolling,
+            'bg-white': !isScrolling,
+        }"
+    >
+        <header class="w-3/4 flex justify-between place-items-center h-20">
+            <div
+                class="flex gap-4 transition-all duration-300 ease-in-out"
+                :class="{
+                    'translate-x-16': isScrolling,
+                    '': !isScrolling,
+                }"
+            >
                 <div @click="toggle" class="cursor-pointer">
                     <img src="images/favic.png" class="h-12 hover:opacity-90" />
                 </div>
@@ -32,7 +55,13 @@ const toggle = () => {
                     >
                 </transition>
             </div>
-            <ul class="flex gap-6 place-items-center">
+            <ul
+                class="flex gap-6 place-items-center transition-all duration-300 ease-in-out"
+                :class="{
+                    '-translate-x-16': isScrolling,
+                    '': !isScrolling,
+                }"
+            >
                 <Link href="/"
                     ><li
                         class="font-semibold text-[16px] font-mona text-primary hover:opacity-80"

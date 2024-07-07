@@ -2,7 +2,7 @@
 <script setup>
 import MainLayout from "@/Layout/MainLayout.vue";
 import Title from "@/Components/Title.vue";
-const pageTitle = "🗨️ Contact Us";
+const pageTitle = " Contact Us";
 </script>
 
 <template>
