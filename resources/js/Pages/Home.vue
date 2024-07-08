@@ -5,6 +5,8 @@ import BannerMessage from "@/Components/BannerMessage.vue";
 import BannerImage from "@/Components/BannerImage.vue";
 import AboutSection from "@/Components/AboutSection.vue";
 import SectionGroup from "@/Components/ui/SectionGroup.vue";
+import ServiceSection from "@/Components/ServiceSection.vue";
+import ContactUs from "@/Components/ContactUs.vue";
 const pageTitle = " Welcome";
 </script>
 
@@ -18,5 +20,7 @@ const pageTitle = " Welcome";
         <SectionGroup class="flex-col-reverse bg-accent">
             <AboutSection />
         </SectionGroup>
+        <ServiceSection />
+        <ContactUs />
     </MainLayout>
 </template>

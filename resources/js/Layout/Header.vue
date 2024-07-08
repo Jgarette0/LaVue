@@ -43,9 +43,9 @@ const toggle = () => {
                     leave-to-class="opacity-0"
                 >
                     <span
-                        class="font-extrabold font-sans text-4xl text-primary"
+                        class="font-extrabold font-sans text-4xl text-primary duration-300 transition-all ease-in-out"
                         v-show="showTitle"
-                        >GAR TECHNOLOGY</span
+                        >GARETTE TECHNOLOGY CO.</span
                     >
                 </transition>
             </div>

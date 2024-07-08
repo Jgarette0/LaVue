@@ -15,11 +15,26 @@ onMounted(() => {
         window.removeEventListener("scroll", updateScroll);
     });
 });
+
+onMounted(() => {
+    document.querySelectorAll(".scroll-link").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+});
 </script>
 
 <template>
     <div
-        class="flex flex-col place-items-start justify-end sm:justify-center h-2/3 w-full px-4 sm:pl-6 overflow-hidden gap-4 md:gap-0 md:h-screen transition-all duration-300 ease-in-out xl:scale-115 xl:translate-x-20 xl:translate-y-20"
+        class="flex flex-col place-items-start justify-end sm:justify-center h-2/3 w-full px-4 sm:pl-6 overflow-hidden gap-4 md:gap-0 md:h-screen transition-transform duration-300 ease-in-out xl:scale-115 xl:translate-x-20 xl:translate-y-20"
     >
         <div
             class="text-5xl sm:text-7xl md:text-7xl xl:text-[105px] font-extrabold text-foreground opacity-90 transition-all duration-300 ease-in-out"
@@ -29,7 +44,7 @@ onMounted(() => {
                 class="transition-all duration-300 ease-in-out"
                 :class="{
                     'text-primary': isScrolling,
-                    'text-primary': !isScrolling,
+                    'text-foreground': !isScrolling,
                 }"
                 >Software</span
             >
@@ -38,7 +53,9 @@ onMounted(() => {
         <div
             class="flex items-center gap-2 flex-row flex-wrap leading-tight md:mt-4"
         >
-            <a href="#webdevelopment" class="hover:opacity-80 cursor-pointer"
+            <a
+                href="#webdevelopment"
+                class="scroll-link hover:opacity-80 cursor-pointer"
                 >Web Development</a
             >
             <div
@@ -48,7 +65,9 @@ onMounted(() => {
                     'bg-foreground': !isScrolling,
                 }"
             ></div>
-            <a href="#mobiledevelopment" class="hover:opacity- cursor-pointer"
+            <a
+                href="#mobiledevelopment"
+                class="scroll-link hover:opacity- cursor-pointer"
                 >Mobile Development</a
             >
             <div
@@ -58,7 +77,9 @@ onMounted(() => {
                     'bg-foreground': !isScrolling,
                 }"
             ></div>
-            <a href="#projectmanagement" class="hover:opacity-80 cursor-pointer"
+            <a
+                href="#projectmanagement"
+                class="scroll-link hover:opacity-80 cursor-pointer"
                 >Project Management</a
             >
         </div>

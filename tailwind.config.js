@@ -12,8 +12,11 @@ module.exports = {
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.{js,jsx,vue}",
     ],
-
     theme: {
+        transitionDuration: {
+            3000: "3000ms",
+            2500: "2500ms",
+        },
         container: {
             center: true,
             padding: "2rem",

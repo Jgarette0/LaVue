@@ -113,21 +113,21 @@ const toggle = () => {
                 >
                     <Link
                         href="/"
-                        class="block font-light font-mona text-primary text-3xl hover:opacity-85 transition-all duration-300 ease-in-out"
+                        class="block font-light font-mona text-primary text-3xl hover:opacity-85 transition-all duration-300 delay-100 ease-in-out"
                         :class="slideLeft ? 'translate-x-8' : 'translate-x-72'"
                     >
                         HOME
                     </Link>
                     <Link
                         href="/About"
-                        class="block font-light font-mona text-primary text-3xl hover:opacity-85 transition-all duration-300 ease-in-out delay-100"
+                        class="block font-light font-mona text-primary text-3xl hover:opacity-85 transition-all duration-300 ease-in-out delay-200"
                         :class="slideLeft ? 'translate-x-8' : 'translate-x-72'"
                     >
                         ABOUT
                     </Link>
                     <Link
                         href="/Services"
-                        class="block font-light font-mona text-primary text-3xl hover:opacity-85 transition-all duration-300 ease-in-out delay-200"
+                        class="block font-light font-mona text-primary text-3xl hover:opacity-85 transition-all duration-300 ease-in-out delay-300"
                         :class="slideLeft ? 'translate-x-8' : 'translate-x-72'"
                     >
                         SERVICES
