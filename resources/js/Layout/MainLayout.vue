@@ -9,7 +9,7 @@ import Sidebar from "./Sidebar.vue";
         <Header />
         <Sidebar />
         <main>
-            <div class="flex flex-col p-4">
+            <div class="flex flex-col">
                 <slot></slot>
             </div>
         </main>

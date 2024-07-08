@@ -22,6 +22,9 @@ module.exports = {
             },
         },
         extend: {
+            scale: {
+                115: "1.15",
+            },
             width: {
                 saktoLang: "1020px",
             },

@@ -23,20 +23,14 @@ const toggle = () => {
 
 <template>
     <main
-        class="flex-col place-items-center sticky top-0 transition-all duration-500 ease-in-out sm:flex hidden"
+        class="flex-col place-items-center left-0 right-0 top-0 transition-all duration-500 ease-in-out sm:flex hidden fixed z-50"
         :class="{
-            'bg-accent  rounded-b-md': isScrolling,
+            'bg-accent': isScrolling,
             'bg-white': !isScrolling,
         }"
     >
         <header class="w-3/4 flex justify-between place-items-center h-20">
-            <div
-                class="flex gap-4 transition-all duration-300 ease-in-out"
-                :class="{
-                    'translate-x-16': isScrolling,
-                    '': !isScrolling,
-                }"
-            >
+            <div class="flex gap-4">
                 <div @click="toggle" class="cursor-pointer">
                     <img src="images/favic.png" class="h-12 hover:opacity-90" />
                 </div>
@@ -55,13 +49,7 @@ const toggle = () => {
                     >
                 </transition>
             </div>
-            <ul
-                class="flex gap-6 place-items-center transition-all duration-300 ease-in-out"
-                :class="{
-                    '-translate-x-16': isScrolling,
-                    '': !isScrolling,
-                }"
-            >
+            <ul class="flex gap-6 place-items-center">
                 <Link href="/"
                     ><li
                         class="font-semibold text-[16px] font-mona text-primary hover:opacity-80"

@@ -2,9 +2,10 @@
 import { Link } from "@inertiajs/vue3";
 import { onMounted, onUnmounted, ref } from "vue";
 import { Button } from "@/Components/ui/button";
-const showTitle = ref(false);
-const isScrolling = ref(false);
 
+const isScrolling = ref(false);
+const showTitle = ref(false);
+const slideLeft = ref(false);
 const updateScroll = () => {
     isScrolling.value = window.scrollY > 0;
 };
@@ -19,20 +20,26 @@ onMounted(() => {
 
 const toggle = () => {
     showTitle.value = !showTitle.value;
+    setTimeout(() => {
+        slideLeft.value = !slideLeft.value;
+    }, 200);
 };
 </script>
 
 <template>
     <main
-        class="flex flex-col place-items-center fixed left-0 right-0 top-0 transition-all duration-500 ease-in-out sm:hidden"
+        class="flex flex-col place-items-center fixed left-0 right-0 top-0 transition-all duration-500 ease-in-out sm:hidden z-20"
     >
         <header
-            class="w-full px-2 bg-secondary-accent flex justify-end items-center h-16 top-0 left-0 right-0 fixed"
+            class="w-full px-2 bg-secondary-accent flex justify-between items-center h-16 top-0 left-0 right-0 fixed"
             :class="{
                 'bg-secondary-foreground': isScrolling,
                 'bg-secondary-foregroundbg-accent': !isScrolling,
             }"
         >
+            <div>
+                <img class="h-8" src="images/favic.png" alt="" srcset="" />
+            </div>
             <div
                 @click="toggle"
                 class="cursor-pointer flex flex-col items-center justify-center"
@@ -95,17 +102,8 @@ const toggle = () => {
                 <div
                     class="h-1/4 w-screen flex flex-row justify-center px-4 gap-3 place-items-end"
                 >
-                    <div>
-                        <img
-                            class="h-8"
-                            src="images/favic.png"
-                            alt=""
-                            srcset=""
-                        />
-                    </div>
                     <div
-                        class="font-extrabold font-sans text-2xl text-primary"
-                        v-show="showTitle"
+                        class="font-extrabold font-sans text-2xl text-primary select-none"
                     >
                         GAR TECHNOLOGY
                     </div>
@@ -115,26 +113,30 @@ const toggle = () => {
                 >
                     <Link
                         href="/"
-                        class="block font-light font-mona text-primary text-3xl hover:opacity-85"
+                        class="block font-light font-mona text-primary text-3xl hover:opacity-85 transition-all duration-300 ease-in-out"
+                        :class="slideLeft ? 'translate-x-8' : 'translate-x-72'"
                     >
                         HOME
                     </Link>
                     <Link
                         href="/About"
-                        class="block font-light font-mona text-primary text-3xl hover:opacity-85"
+                        class="block font-light font-mona text-primary text-3xl hover:opacity-85 transition-all duration-300 ease-in-out delay-100"
+                        :class="slideLeft ? 'translate-x-8' : 'translate-x-72'"
                     >
                         ABOUT
                     </Link>
                     <Link
                         href="/Services"
-                        class="block font-light font-mona text-primary text-3xl hover:opacity-85"
+                        class="block font-light font-mona text-primary text-3xl hover:opacity-85 transition-all duration-300 ease-in-out delay-200"
+                        :class="slideLeft ? 'translate-x-8' : 'translate-x-72'"
                     >
                         SERVICES
                     </Link>
                 </nav>
                 <div class="h-2/3 w-screen flex flex-col justify-between">
                     <div
-                        class="w-screen pl-4 flex place-items-center justify-start gap-3"
+                        class="w-screen pl-4 flex place-items-center justify-start transition-all duration-500 ease-in-out"
+                        :class="slideLeft ? 'gap-6' : 'gap-1'"
                     >
                         <a
                             class="bg-accent opacity-70 rounded-lg p-3 hover:opacity-80"
