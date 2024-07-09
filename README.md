@@ -17,11 +17,11 @@
         
               composer install
         
-4
-
-               npm install
+3,
         
-5.
+                npm install
+        
+3.
         
                 cp .env.example .env
         
