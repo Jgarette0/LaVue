@@ -12,11 +12,8 @@ module.exports = {
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.{js,jsx,vue}",
     ],
+
     theme: {
-        transitionDuration: {
-            3000: "3000ms",
-            2500: "2500ms",
-        },
         container: {
             center: true,
             padding: "2rem",
@@ -25,6 +22,16 @@ module.exports = {
             },
         },
         extend: {
+            transitionDuration: {
+                1500: "1500ms",
+                2000: "2000ms",
+                2500: "2500ms",
+                3000: "3000ms",
+                3500: "3500ms",
+                4000: "4000ms",
+                4500: "4500ms",
+                5000: "5000ms",
+            },
             scale: {
                 115: "1.15",
             },

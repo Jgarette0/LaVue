@@ -23,7 +23,7 @@
                     class="flex flex-row justify-center place-content-center gap-3"
                 >
                     <div class="flex flex-col justify-center">
-                        <div class="h-px w-screen bg-primary"></div>
+                        <div class="h-px xl:h-[2px] w-screen bg-primary"></div>
                     </div>
                     <a
                         class="bg-gray-300 opacity-70 rounded-lg p-3 hover:opacity-80"
@@ -148,7 +148,7 @@
                             /></svg
                     ></a>
                     <div class="flex flex-col justify-center">
-                        <div class="h-px w-screen bg-primary"></div>
+                        <div class="h-px xl:h-[2px] w-screen bg-primary"></div>
                     </div>
                 </div>
             </div>
@@ -158,15 +158,19 @@
                 <div
                     class="text-accent md:text-foreground text-lg md:text-2xl font-mona hidden md:flex"
                 >
-                    <span class="hover:opacity-85 cursor-pointer md:mx-2"
+                    <span
+                        class="hover:text-primary transition-all duration-300 ease-in-out cursor-pointer md:mx-2"
                         >All Rights Reserved</span
                     >
-                    |
-                    <span class="hover:opacity-85 md:mx-2 cursor-pointer">
+                    <span class="text-primary"> |</span>
+                    <span
+                        class="hover:text-primary transition-all duration-300 ease-in-out md:mx-2 cursor-pointer"
+                    >
                         Privacy Policy</span
                     >
-                    |
-                    <span class="hover:opacity-85 md:mx-2 cursor-pointer"
+                    <span class="text-primary"> |</span>
+                    <span
+                        class="hover:text-primary transition-all duration-300 ease-in-out md:mx-2 cursor-pointer"
                         >Terms and Conditions</span
                     >
                 </div>

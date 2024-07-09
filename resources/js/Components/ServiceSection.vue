@@ -6,17 +6,35 @@ import { CardContent } from "@/Components/ui/card";
 import { CardFooter } from "@/Components/ui/card";
 import { Button } from "@/Components/ui/button";
 import { Link } from "@inertiajs/vue3";
+
+import { ref } from "vue";
+import { useIntersectionObserver } from "@vueuse/core";
+
+const target = ref(null);
+const isVisible = ref(false);
+
+// Initialize the IntersectionObserver
+const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
+    setTimeout(() => {
+        isVisible.value = isIntersecting;
+    }, 500);
+});
 </script>
 <template>
     <div
+        ref="target"
         class="flex flex-col place-items-center gap-8 w-screen px-2 md:px-8 py-12 md:py-20"
     >
         <div class="text-lg sm:text-xl mb-8 font-mona text-foreground">
             OUR SERVICES
         </div>
         <Card
-            class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row flex-col"
+            class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row flex-col transition-all duration-1500 ease-in"
             id="webdevelopment"
+            :class="{
+                'translate-x-0': isVisible,
+                '-translate-x-[100%]': !isVisible,
+            }"
         >
             <div class="md:h-[25rem] overflow-hidden w-full md:w-[35%]">
                 <img
@@ -43,14 +61,45 @@ import { Link } from "@inertiajs/vue3";
                 </CardContent>
                 <CardFooter>
                     <Link href="/About">
-                        <Button variant="secondary">Learn more </Button>
+                        <Button
+                            class="group px-5 md:px-6 text-lg md:text-2xl font-thin rounded-full py-5 md:py-7 hover:opacity-85 sm:flex"
+                            variant="outline"
+                            :class="{
+                                'bg-primary text-accent border-none':
+                                    isScrolling,
+                                '': !isScrolling,
+                            }"
+                            >Learn more
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="40"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-arrow-down-right px-2 transform group-hover:-rotate-45 transition-all duration-500 ease-in-out group-hover:text-primary"
+                                :class="{
+                                    'text-white ': isScrolling,
+                                    'text-primary': !isScrolling,
+                                }"
+                            >
+                                <path d="m7 7 10 10" />
+                                <path d="M17 7v10H7" /></svg
+                        ></Button>
                     </Link>
                 </CardFooter>
             </div>
         </Card>
         <Card
             id="mobiledevelopment"
-            class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row-reverse flex-col"
+            class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row-reverse flex-col transition-all duration-2500 ease-in"
+            :class="{
+                'translate-x-0': isVisible,
+                'translate-x-[100%]': !isVisible,
+            }"
         >
             <div class="md:h-[25rem] overflow-hidden w-full md:w-[35%]">
                 <img
@@ -77,14 +126,43 @@ import { Link } from "@inertiajs/vue3";
                 </CardContent>
                 <CardFooter class="w-full flex justify-end">
                     <Link href="/About">
-                        <Button variant="secondary">Learn more </Button>
-                    </Link></CardFooter
-                >
+                        <Button
+                            class="group px-5 md:px-6 text-lg md:text-2xl font-thin rounded-full py-5 md:py-7 hover:opacity-85 sm:flex"
+                            variant="outline"
+                            :class="{
+                                'bg-primary text-accent border-none':
+                                    isScrolling,
+                                '': !isScrolling,
+                            }"
+                            >Learn more
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="40"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-arrow-down-right px-2 transform group-hover:-rotate-45 transition-all duration-500 ease-in-out group-hover:text-primary"
+                                :class="{
+                                    'text-white ': isScrolling,
+                                    'text-primary': !isScrolling,
+                                }"
+                            >
+                                <path d="m7 7 10 10" />
+                                <path d="M17 7v10H7" /></svg></Button></Link
+                ></CardFooter>
             </div>
         </Card>
         <Card
             id="projectmanagement"
-            class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row flex-col"
+            class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row flex-col transition-all duration-3500 ease-in"
+            :class="{
+                'translate-x-0': isVisible,
+                '-translate-x-[100%]': !isVisible,
+            }"
         >
             <div class="md:h-[25rem] overflow-hidden w-full md:w-[35%]">
                 <img
@@ -111,9 +189,34 @@ import { Link } from "@inertiajs/vue3";
                 </CardContent>
                 <CardFooter>
                     <Link href="/About">
-                        <Button variant="secondary">Learn more </Button>
-                    </Link></CardFooter
-                >
+                        <Button
+                            class="group px-5 md:px-6 text-lg md:text-2xl font-thin rounded-full py-5 md:py-7 hover:opacity-85 sm:flex"
+                            variant="outline"
+                            :class="{
+                                'bg-primary text-accent border-none':
+                                    isScrolling,
+                                '': !isScrolling,
+                            }"
+                            >Learn more
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="40"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-arrow-down-right px-2 transform group-hover:-rotate-45 transition-all duration-500 ease-in-out group-hover:text-primary"
+                                :class="{
+                                    'text-white ': isScrolling,
+                                    'text-primary': !isScrolling,
+                                }"
+                            >
+                                <path d="m7 7 10 10" />
+                                <path d="M17 7v10H7" /></svg></Button></Link
+                ></CardFooter>
             </div>
         </Card>
     </div>

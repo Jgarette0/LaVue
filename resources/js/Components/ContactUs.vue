@@ -12,7 +12,7 @@ import { Link } from "@inertiajs/vue3";
         class="flex flex-col w-screen px-2 md:py-0 py-12 md:px-20 place-items-center justify-center md:h-[35rem]"
     >
         <Card
-            class="md:w-5/6 w-screen md:h-[25rem] bg-foreground rounded-xl md:rounded-[4rem] flex flex-col place-items-center justify-center"
+            class="md:w-5/6 w-screen md:h-[25rem] bg-secondary-foreground opacity-90 rounded-xl md:rounded-[4rem] flex flex-col place-items-center justify-center"
         >
             <CardHeader class="">
                 <CardTitle

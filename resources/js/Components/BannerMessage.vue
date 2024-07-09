@@ -41,10 +41,10 @@ onMounted(() => {
         >
             Realize Your
             <span
-                class="transition-all duration-300 ease-in-out"
+                class="transition-all duration-500 ease-in-out"
                 :class="{
                     'text-primary': isScrolling,
-                    'text-foreground': !isScrolling,
+                    'text-primary': !isScrolling,
                 }"
                 >Software</span
             >
@@ -85,10 +85,32 @@ onMounted(() => {
         </div>
         <div class="mt-10 w-screen">
             <Button
-                class="px-20 sm:px-24 md:px-36 py-5 hover:opacity-85 hidden sm:flex"
+                class="group px-5 md:px-6 text-lg md:text-2xl font-thin rounded-full py-5 md:py-7 hover:opacity-85 sm:flex"
                 variant="outline"
-                >Contact Us</Button
-            >
+                :class="{
+                    'bg-primary text-accent border-none': isScrolling,
+                    '': !isScrolling,
+                }"
+                >Let's Talk
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-arrow-down-right px-2 transform group-hover:-rotate-45 transition-all duration-500 ease-in-out group-hover:text-primary"
+                    :class="{
+                        'text-white ': isScrolling,
+                        'text-primary': !isScrolling,
+                    }"
+                >
+                    <path d="m7 7 10 10" />
+                    <path d="M17 7v10H7" /></svg
+            ></Button>
         </div>
     </div>
 </template>
