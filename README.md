@@ -1,3 +1,4 @@
-##PROTOTYPE :
 
-<div><img src="images/prototype.png" /></div>
+
+![Prototype Image](https://github.com/Jgarette0/LaVue/blob/main/public/images/prototype.png)
+
