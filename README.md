@@ -17,23 +17,23 @@
         
               composer install
         
-3,
+3.
         
                 npm install
         
-3.
+4.
         
                 cp .env.example .env
         
-6.
+5.
         
                 php artisan key:generate
 
-1.
+6.
         
                  npm run dev
         
-2.
+7.
         
                  php artisan serve
         
