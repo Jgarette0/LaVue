@@ -1,7 +1,9 @@
 
 
 
-  #Steps run this into your local (ithink)
+  #Steps run this project into your local (ithink)
+
+
 1.
         
                 git clone https://github.com/Jgarette0/LaVue.git
