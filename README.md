@@ -48,4 +48,6 @@
     php artisan serve
     ```
 
-![Demo](public/images/output.gif)
+<div style="text-align: center;">
+  <img src="public/images/output.gif" alt="Demo" style="border-radius: 5px;">
+</div>
