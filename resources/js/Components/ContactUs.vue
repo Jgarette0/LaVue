@@ -6,6 +6,7 @@ import { CardContent } from "@/Components/ui/card";
 import { CardFooter } from "@/Components/ui/card";
 import { Button } from "@/Components/ui/button";
 import { Link } from "@inertiajs/vue3";
+import { CalendarPlus } from "lucide-vue-next";
 </script>
 <template>
     <div
@@ -30,29 +31,11 @@ import { Link } from "@inertiajs/vue3";
             <CardFooter class="text-accent">
                 <Link href="/Contact">
                     <Button
-                        class="md:text-2xl text-md px-6 py-6 md:py-8 md:px-8"
+                        class="md:text-2xl text-md px-6 py-6 md:py-8 md:px-8 md:mt-4 rounded-[15px]"
                         variant="secondary"
-                        ><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="32"
-                            height="32"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="lucide md:scale-100 scale-75 lucide-calendar-plus mr-4 text-[#2563eb]"
-                        >
-                            <path d="M8 2v4" />
-                            <path d="M16 2v4" />
-                            <path
-                                d="M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8"
-                            />
-                            <path d="M3 10h18" />
-                            <path d="M16 19h6" />
-                            <path d="M19 16v6" /></svg
-                        >Schedule free consultation</Button
+                    >
+                        <CalendarPlus class="md:scale-100 scale-75 mr-4" />
+                        Schedule free consultation</Button
                     ></Link
                 >
             </CardFooter>

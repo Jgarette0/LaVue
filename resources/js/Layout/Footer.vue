@@ -15,7 +15,7 @@ import { Linkedin } from "lucide-vue-next";
                 class="h-[65%] w-screen flex flex-col place-items-center justify-end"
             >
                 <div
-                    class="flex flex-col md:flex-row justify-center place-items-center gap-3"
+                    class="flex flex-col md:flex-row justify-center md:hidden place-items-center gap-3"
                 >
                     <img
                         src="images/gar.png"

@@ -1,6 +1,7 @@
 <script setup>
 import { Button } from "@/Components/ui/button";
 import { ref, onMounted, onUnmounted } from "vue";
+import { ArrowDownRight } from "lucide-vue-next";
 
 const isScrolling = ref(false);
 
@@ -92,25 +93,16 @@ onMounted(() => {
                     '': !isScrolling,
                 }"
                 >Let's Talk
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
+                <ArrowDownRight
                     width="40"
                     height="40"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    stroke="currentColor"
                     stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-arrow-down-right px-2 transform group-hover:-rotate-45 transition-all duration-500 ease-in-out group-hover:text-primary"
+                    class="px-2 transform group-hover:-rotate-45 transition-all duration-500 ease-in-out group-hover:text-primary"
                     :class="{
-                        'text-white ': isScrolling,
+                        'text-white': isScrolling,
                         'text-primary': !isScrolling,
                     }"
-                >
-                    <path d="m7 7 10 10" />
-                    <path d="M17 7v10H7" /></svg
-            ></Button>
+            /></Button>
         </div>
     </div>
 </template>
