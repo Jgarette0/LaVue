@@ -29,7 +29,7 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
             OUR SERVICES
         </div>
         <Card
-            class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row flex-col transition-all duration-1500 ease-in"
+            class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row flex-col transition-all duration-1000 ease-in"
             id="webdevelopment"
             :class="{
                 'translate-x-0': isVisible,
@@ -98,7 +98,7 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
             class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row-reverse flex-col transition-all duration-2500 ease-in"
             :class="{
                 'translate-x-0': isVisible,
-                'translate-x-[100%]': !isVisible,
+                '-translate-x-[100%]': !isVisible,
             }"
         >
             <div class="md:h-[25rem] overflow-hidden w-full md:w-[35%]">
@@ -158,7 +158,7 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
         </Card>
         <Card
             id="projectmanagement"
-            class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row flex-col transition-all duration-3500 ease-in"
+            class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row flex-col transition-all duration-3500 delay-[5000ms] ease-in"
             :class="{
                 'translate-x-0': isVisible,
                 '-translate-x-[100%]': !isVisible,

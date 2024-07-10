@@ -48,4 +48,4 @@
     php artisan serve
     ```
 
-![Demo](public/images/upload.gif)
+![Demo](public/images/u.gif)

@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar.vue";
 </script>
 
 <template>
-    <div class="flex flex-col w-screen overflow-hidden">
+    <div class="flex flex-col w-screen overflow-hidden bg-background">
         <Header />
         <Sidebar />
         <main>

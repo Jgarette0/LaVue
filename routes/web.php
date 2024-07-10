@@ -1,16 +1,10 @@
 <?php
-
-use Illuminate\Foundation\Application;
-
-
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+
 Route::get('/', function () {
-    return Inertia::render('Home', [
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return Inertia::render('Home');
 });
 
 Route::get('/About', function () {
@@ -20,18 +14,3 @@ Route::get('/About', function () {
 Route::get('/Contact', function () {
     return Inertia::render('Contact');
 });
-
-
-// use Illuminate\Support\Facades\Route;
-// use Inertia\Inertia;
-
-// Route::get('/', function () {
-//     return Inertia::render('Home', [
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
-
-// Route::get('/{any}', function () {
-//     return view('app');
-// })->where('any', '.*');

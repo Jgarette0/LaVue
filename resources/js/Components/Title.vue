@@ -1,7 +1,5 @@
 <!-- resources/js/Components/Meta.vue -->
 <script setup>
-import { Head } from "@inertiajs/vue3";
-
 const props = defineProps({
     title: {
         type: String,
@@ -13,5 +11,6 @@ const props = defineProps({
 <template>
     <Head>
         <title>{{ title }}</title>
+        <link rel="icon" type="image/svg+xml" href="images/favic.png" />
     </Head>
 </template>

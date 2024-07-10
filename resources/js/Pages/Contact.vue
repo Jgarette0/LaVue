@@ -11,9 +11,7 @@ const pageTitle = "Contact Us";
 <template>
     <Title :title="`${pageTitle}`" />
     <MainLayout>
-        <SectionGroup
-            class="bg-secondary-foreground md:bg-primary h-full md:h-screen"
-        >
+        <SectionGroup class="bg-secondary-foreground md:bg-primary">
             <FormSection />
         </SectionGroup>
     </MainLayout>

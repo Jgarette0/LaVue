@@ -1,3 +1,11 @@
+<script setup>
+import { Instagram } from "lucide-vue-next";
+import { Facebook } from "lucide-vue-next";
+import { Dribbble } from "lucide-vue-next";
+import { Mail } from "lucide-vue-next";
+import { Linkedin } from "lucide-vue-next";
+</script>
+
 <template>
     <footer>
         <div
@@ -27,126 +35,44 @@
                     </div>
                     <a
                         class="bg-gray-300 opacity-70 rounded-lg p-3 hover:opacity-80"
-                        href="http://"
+                        href="http://linkedin.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        ><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="lucide text-primary lucide-linkedin"
-                        >
-                            <path
-                                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                            />
-                            <rect width="4" height="12" x="2" y="9" />
-                            <circle cx="4" cy="4" r="2" /></svg
-                    ></a>
+                    >
+                        <Linkedin class="text-primary" />
+                    </a>
                     <a
                         class="bg-gray-300 opacity-70 rounded-lg p-3 hover:opacity-80"
-                        href="http://"
+                        href="http://facebook.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        ><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="lucide text-primary lucide-facebook"
-                        >
-                            <path
-                                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                            /></svg
-                    ></a>
+                    >
+                        <Facebook class="text-primary" />
+                    </a>
                     <a
                         class="bg-gray-300 opacity-70 rounded-lg p-3 hover:opacity-80"
-                        href="http://"
+                        href="http://instagram.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        ><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="lucide text-primary lucide-instagram"
-                        >
-                            <rect
-                                width="20"
-                                height="20"
-                                x="2"
-                                y="2"
-                                rx="5"
-                                ry="5"
-                            />
-                            <path
-                                d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                            />
-                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg
-                    ></a>
+                    >
+                        <Instagram class="text-primary" />
+                    </a>
                     <a
                         class="bg-gray-300 opacity-70 rounded-lg p-3 hover:opacity-80"
-                        href="http://"
+                        href="http://dribbble.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        ><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="lucide text-primary lucide-dribbble"
-                        >
-                            <circle cx="12" cy="12" r="10" />
-                            <path
-                                d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"
-                            />
-                            <path
-                                d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"
-                            />
-                            <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72" /></svg
-                    ></a>
+                    >
+                        <Dribbble class="text-primary" />
+                    </a>
                     <a
                         class="bg-gray-300 opacity-70 rounded-lg p-3 hover:opacity-80"
-                        href="http://"
+                        href="mailto:gartechnology@software.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        ><svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="lucide lucide-mail text-primary"
-                        >
-                            <rect width="20" height="16" x="2" y="4" rx="2" />
-                            <path
-                                d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
-                            /></svg
-                    ></a>
+                    >
+                        <Mail class="text-primary" />
+                    </a>
                     <div class="flex flex-col justify-center">
                         <div class="h-px xl:h-[2px] w-screen bg-primary"></div>
                     </div>
@@ -185,6 +111,5 @@
                 </div>
             </div>
         </div>
-        <!-- <p>&copy; 2024 Your Company</p> -->
     </footer>
 </template>
